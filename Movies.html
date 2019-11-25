@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+   background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+.aveng {
+  float: left;
+  width: 23.33%;
+  padding: 5px;
+}
+
+
+.marvel::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+
+<h2 align="center">Marvel Movies</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Movies.." title="Type in a name">
+
+
+ <div class="marvel">
+<ul id="myUL">
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt0800369/">
+<img border="0" alt="Thor" src="thor-movie-poster-marvel-cinematic-universe-1038890.jpg" width="200" height="200">
+<p><b>Thor - 2011</b></p>
+</a>
+</li>
+</div>
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt0458339/">
+<img border="0" alt="Capatin America" src="71krfsS5kNL._SY550_.jpg" width="200" height="200">
+<p><b>Captain America - 2011</b></p>
+</a>
+</li>
+</div>
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt1300854/">
+<img border="0" alt="Iron Man 3" src="iron-man-3-movie-poster-marvel-cinematic-universe-1038894.jpg" width="200" height="200">
+<p><b>Iron Man 3 - 2013</b></p>
+</a>
+</li>
+</div>
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt0848228/">
+<img border="0" alt="The Avengers" src="51k1da28EmL.jpg" width="200" height="200">
+<p><b>The Avengers - 2012</b></p>
+</a>
+</li>
+</div>
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt2395427/">
+<img border="0" alt="Avengers Age of Ultron" src="avengers-2-movie-poster-marvel-cinematic-universe-1038898.jpg" width="200" height="200">
+<p><b>Avengers Age of Ultron - 2015</b></p>
+</a>
+</li>
+</div>
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt0478970/">
+<img border="0" alt="Ant Man" src="ant-man_lob_crd_01_8.jpg" width="200" height="200">
+<p><b>Ant Man - 2016</b></p>
+</a>
+</li>
+</div>
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt1825683/">
+<img border="0" alt="Black Banther" src="blackpanther_lob_crd_01_4.jpg" width="200" height="200">
+<p><b>Black Banther - 2018</b></p>
+</a>
+</li>
+</div>
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt4154756/">
+<img border="0" alt="Avengers Infinity War" src="915LymyuIDL._SY679_.jpg" width="200" height="200">
+<p><b>Avengers Infinity War - 2018</b></p>
+</a>
+</li>
+</div>
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt4154664/">
+<img border="0" alt="Captain Marvel" src="d9d7a49c44b2a5dde693e12c8ea48142.jpg" width="200" height="200">
+<div><b>Captain Marvel - 2019</b></div>
+</a>
+</li>
+</div>
+<div class="aveng">
+<li>
+<a href="https://www.imdb.com/title/tt4154796/">
+<img border="0" alt="Avengers Endgame" src="endgame-poster.jpg" width="200" height="200">
+<p><b>Avengers Endgame - 2019</b></p>
+</a>
+</li>
+</div>
+</ul>
+</div>
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = " ";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
